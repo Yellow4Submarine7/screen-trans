@@ -235,26 +235,21 @@ class OverlayService : LifecycleService(), SavedStateRegistryOwner, ViewModelSto
     //                                                                                            //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private lateinit var targetHandleViewModel: TargetHandleViewModel
-
     fun getTargetHandleViewModel(): TargetHandleViewModel {
-        if (!::targetHandleViewModel.isInitialized) {
-            val viewModelFactory = TargetHandleViewModelFactory(
-                applicationContext = applicationContext,
-                secureRepository = secureRepository,
-                remoteConfigRepository = remoteConfigRepository,
-                billingRepository = billingRepository,
-                preferenceRepository = preferenceRepository,
-                captureRepository = captureRepository,
-                visionRepository = visionRepository.apply { addObserver(lifecycle) },
-                correctionRepository = correctionRepository,
-                translationRepository = translationRepository,
-                ttsRepository = ttsRepository,
-                analyticsRepository = analyticsRepository,
-            )
-            targetHandleViewModel = ViewModelProvider(this, viewModelFactory)[TargetHandleViewModel::class.java]
-        }
-        return targetHandleViewModel
+        val viewModelFactory = TargetHandleViewModelFactory(
+            applicationContext = applicationContext,
+            secureRepository = secureRepository,
+            remoteConfigRepository = remoteConfigRepository,
+            billingRepository = billingRepository,
+            preferenceRepository = preferenceRepository,
+            captureRepository = captureRepository,
+            visionRepository = visionRepository.apply { addObserver(lifecycle) },
+            correctionRepository = correctionRepository,
+            translationRepository = translationRepository,
+            ttsRepository = ttsRepository,
+            analyticsRepository = analyticsRepository,
+        )
+        return ViewModelProvider(this, viewModelFactory)[TargetHandleViewModel::class.java]
     }
 
 
@@ -264,19 +259,14 @@ class OverlayService : LifecycleService(), SavedStateRegistryOwner, ViewModelSto
     //                                                                                            //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private lateinit var menuBarViewModel: MenuBarViewModel
-
     fun getMenuBarViewModel(): MenuBarViewModel {
-        if (!::menuBarViewModel.isInitialized) {
-            val viewModelFactory = MenuBarViewModelFactory(
-                applicationContext = applicationContext,
-                billingRepository = billingRepository,
-                preferenceRepository = preferenceRepository,
-                translationRepository = translationRepository,
-            )
-            menuBarViewModel = ViewModelProvider(this, viewModelFactory)[MenuBarViewModel::class.java]
-        }
-        return menuBarViewModel
+        val viewModelFactory = MenuBarViewModelFactory(
+            applicationContext = applicationContext,
+            billingRepository = billingRepository,
+            preferenceRepository = preferenceRepository,
+            translationRepository = translationRepository,
+        )
+        return ViewModelProvider(this, viewModelFactory)[MenuBarViewModel::class.java]
     }
 
 
@@ -286,18 +276,13 @@ class OverlayService : LifecycleService(), SavedStateRegistryOwner, ViewModelSto
     //                                                                                            //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private lateinit var languageListViewModel: LanguageListViewModel
-
     fun getLanguageListViewModel(): LanguageListViewModel {
-        if (!::languageListViewModel.isInitialized) {
-            val viewModelFactory = LanguageListViewModelFactory(
-                applicationContext = applicationContext,
-                preferenceRepository = preferenceRepository,
-                translationRepository = translationRepository,
-            )
-            languageListViewModel = ViewModelProvider(this, viewModelFactory)[LanguageListViewModel::class.java]
-        }
-        return languageListViewModel
+        val viewModelFactory = LanguageListViewModelFactory(
+            applicationContext = applicationContext,
+            preferenceRepository = preferenceRepository,
+            translationRepository = translationRepository,
+        )
+        return ViewModelProvider(this, viewModelFactory)[LanguageListViewModel::class.java]
     }
 
 
@@ -307,18 +292,13 @@ class OverlayService : LifecycleService(), SavedStateRegistryOwner, ViewModelSto
     //                                                                                            //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private lateinit var sliderDialogViewModel: SliderDialogViewModel
-
     fun getSliderDialogViewModel(): SliderDialogViewModel {
-        if (!::sliderDialogViewModel.isInitialized) {
-            val viewModelFactory = SliderDialogViewModelFactory(
-                preferenceRepository = preferenceRepository,
-                translationRepository = translationRepository,
-                ttsRepository = ttsRepository,
-            )
-            sliderDialogViewModel = ViewModelProvider(this, viewModelFactory)[SliderDialogViewModel::class.java]
-        }
-        return sliderDialogViewModel
+        val viewModelFactory = SliderDialogViewModelFactory(
+            preferenceRepository = preferenceRepository,
+            translationRepository = translationRepository,
+            ttsRepository = ttsRepository,
+        )
+        return ViewModelProvider(this, viewModelFactory)[SliderDialogViewModel::class.java]
     }
 
 
@@ -328,19 +308,14 @@ class OverlayService : LifecycleService(), SavedStateRegistryOwner, ViewModelSto
     //                                                                                            //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private lateinit var voiceListViewModel: VoiceListViewModel
-
     fun getVoiceListViewModel(): VoiceListViewModel {
-        if (!::voiceListViewModel.isInitialized) {
-            val viewModelFactory = VoiceListViewModelFactory(
-                applicationContext = applicationContext,
-                preferenceRepository = preferenceRepository,
-                translationRepository = translationRepository,
-                ttsRepository = ttsRepository,
-            )
-            voiceListViewModel = ViewModelProvider(this, viewModelFactory)[VoiceListViewModel::class.java]
-        }
-        return voiceListViewModel
+        val viewModelFactory = VoiceListViewModelFactory(
+            applicationContext = applicationContext,
+            preferenceRepository = preferenceRepository,
+            translationRepository = translationRepository,
+            ttsRepository = ttsRepository,
+        )
+        return ViewModelProvider(this, viewModelFactory)[VoiceListViewModel::class.java]
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
