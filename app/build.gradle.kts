@@ -10,7 +10,7 @@ plugins {
 }
 
 val admobAppId = if (gradle.startParameter.taskNames.any { it.contains("Debug") }) {
-    "" // TODO: Set your AdMob App ID for debug
+    "ca-app-pub-3940256099942544~3347511713" // Google's official test AdMob App ID
 } else {
     "ca-app-pub-xxxxxxxxxxxxxxxx~xxxxxxxxxx"
 }
