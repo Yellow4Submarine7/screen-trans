@@ -14,7 +14,6 @@ import android.media.projection.MediaProjection
 import android.media.projection.MediaProjectionManager
 import android.os.Handler
 import android.os.Looper
-import android.os.PowerManager
 import androidx.core.graphics.createBitmap
 import com.galaxy.airviewdictionary.data.AVDRepository
 import com.galaxy.airviewdictionary.data.local.screen.ScreenInfo
@@ -62,17 +61,6 @@ class CaptureRepository @Inject constructor(@ApplicationContext val context: Con
 
     private val handler = Handler(Looper.getMainLooper())
 
-    // 타임아웃 감시를 위한 Runnable
-    private val timeoutRunnable = Runnable {
-        state = State.Uninitialized
-        val powerManager = context.getSystemService(Context.POWER_SERVICE) as PowerManager
-        val isScreenOn = powerManager.isInteractive
-        Timber.tag(TAG).d("No image available for over 3 second. Setting end = true isScreenOn = $isScreenOn")
-        if (!isScreenOn) {
-            mediaProjectionToken = null
-        }
-    }
-
     private fun start() {
         Timber.tag(TAG).d("#### request() #### $mediaProjectionToken")
 
@@ -96,8 +84,12 @@ class CaptureRepository @Inject constructor(@ApplicationContext val context: Con
 
             mediaProjectionStopCallback = object : MediaProjection.Callback() {
                 override fun onStop() {
+                    // System or user stopped the projection (e.g. via system "Stop sharing" notification).
+                    // Reset state so the next request() goes through start() and surfaces a proper
+                    // NoMediaProjectionTokenException, which triggers the re-auth flow in the UI.
                     Timber.tag(TAG).w("#### MediaProjectionStopCallback onStop() ####")
                     clearResources()
+                    state = State.Uninitialized
                 }
             }
             mediaProjection!!.registerCallback(mediaProjectionStopCallback!!, null)
@@ -116,9 +108,6 @@ class CaptureRepository @Inject constructor(@ApplicationContext val context: Con
             )
 
             imageReader!!.setOnImageAvailableListener({ imageReader ->
-                handler.removeCallbacks(timeoutRunnable)
-                handler.postDelayed(timeoutRunnable, 3000L) // 3초 동안 이벤트가 발생하지 않으면 end를 true로 설정
-
 //                Timber.tag(TAG).d("---- onImageAvailable imageReader $imageReader ----")
                 val capturedImage = imageReader.acquireLatestImage()
                 try {
@@ -272,7 +261,6 @@ class CaptureRepository @Inject constructor(@ApplicationContext val context: Con
 
     override fun onZeroReferences() {
         Timber.tag(TAG).d("====================== mediaProjectionToken = null ============================ ")
-        handler.removeCallbacks(timeoutRunnable)
         clearResources()
         mediaProjectionToken = null
     }
