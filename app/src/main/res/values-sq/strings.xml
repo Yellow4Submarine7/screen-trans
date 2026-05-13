@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Përkthimi më i shpejtë. Pa kufizime, falas përgjithmonë.</string>
     <string name="premium_view_description_sentence_detection">Përdor gishtin për të përkthyer rreshta.</string>
     <string name="premium_view_description_paragraph_detection">Paragrafët njihen automatikisht.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Mund të përzgjedhësh zonën që dëshiron.</string>
     <string name="premium_view_description_word_detection">Përkthimi fjalë për fjalë është gjithmonë falas dhe i pakufizuar.</string>
     <string name="premium_view_description_fixed_area_detection">Mund të përktheni vazhdimisht zona fikse, si p.sh. titrat e filmave.</string>

@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">ಅತ್ಯಂತ ವೇಗದ ಅನುವಾದ. ಸದಾ ಉಚಿತ ಮತ್ತು ಅಮಿತ.</string>
     <string name="premium_view_description_sentence_detection">ನಿಮ್ಮ ಬೆರಳಿನಿಂದ ಸಾಲುಗಳನ್ನು ಅನುವಾದಿಸಿ.</string>
     <string name="premium_view_description_paragraph_detection">ಪ್ಯಾರಾಗ್ರಾಫ್‌ಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಗುರುತಿಸಲಾಗುತ್ತದೆ.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">ನೀವು ಬಯಸುವ ಶ್ರೇಣಿಯನ್ನು ಆಯ್ಕೆ ಮಾಡಬಹುದು.</string>
     <string name="premium_view_description_word_detection">ಪದಗಳ ಅನುವಾದ ಯಾವಾಗಲೂ ಉಚಿತ ಮತ್ತು ಅಮಿತ.</string>
     <string name="premium_view_description_fixed_area_detection">ಚಲನಚಿತ್ರ ಉಪಶೀರ್ಷಿಕೆಗಳಂತಹ ಸ್ಥಿರ ಪ್ರದೇಶಗಳನ್ನು ನೀವು ನಿರಂತರವಾಗಿ ಅನುವಾದಿಸಬಹುದು.</string>

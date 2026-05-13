@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Cea mai rapidă traducere. Nelimitat, gratuit pentru totdeauna.</string>
     <string name="premium_view_description_sentence_detection">Folosește degetul pentru a traduce linii.</string>
     <string name="premium_view_description_paragraph_detection">Paragrafele sunt detectate automat.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Poți selecta și manual zona dorită.</string>
     <string name="premium_view_description_word_detection">Traducerea cuvânt cu cuvânt este întotdeauna gratuită și nelimitată.</string>
     <string name="premium_view_description_fixed_area_detection">Puteți traduce continuu zone fixe, cum ar fi subtitrările filmelor.</string>

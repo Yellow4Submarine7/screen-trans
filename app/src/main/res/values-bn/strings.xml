@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">সবচেয়ে দ্রুত অনুবাদ। চিরকাল বিনামূল্যে এবং সীমাহীন।</string>
     <string name="premium_view_description_sentence_detection">লাইন অনুবাদের জন্য আঙুল ব্যবহার করুন।</string>
     <string name="premium_view_description_paragraph_detection">অনুচ্ছেদ স্বয়ংক্রিয়ভাবে শনাক্ত করা হয়।</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">আপনি নিজে পছন্দমতো অংশ বেছে নিতে পারেন।</string>
     <string name="premium_view_description_word_detection">শব্দভিত্তিক অনুবাদ সব সময় বিনামূল্যে এবং সীমাহীন।</string>
     <string name="premium_view_description_fixed_area_detection">চলচ্চিত্রের সাবটাইটেলের মতো নির্দিষ্ট ক্ষেত্রগুলি আপনি ধারাবাহিকভাবে অনুবাদ করতে পারেন।</string>

@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Najbrži prijevod. Besplatno i neograničeno zauvijek.</string>
     <string name="premium_view_description_sentence_detection">Prijevod redaka pomoću dodira prstom.</string>
     <string name="premium_view_description_paragraph_detection">Odlomci se automatski prepoznaju.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Također možete odabrati područje za prijevod.</string>
     <string name="premium_view_description_word_detection">Prijevod riječi je uvijek besplatan i neograničen.</string>
     <string name="premium_view_description_fixed_area_detection">Možete neprekidno prevoditi fiksna područja, poput filmskih titlova.</string>

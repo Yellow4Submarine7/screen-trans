@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Самый быстрый перевод. Без ограничений, навсегда бесплатно.</string>
     <string name="premium_view_description_sentence_detection">Переводите строки движением пальца.</string>
     <string name="premium_view_description_paragraph_detection">Абзацы распознаются автоматически.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Можно выбрать нужную область вручную.</string>
     <string name="premium_view_description_word_detection">Помесячный перевод всегда бесплатен и без ограничений.</string>
     <string name="premium_view_description_fixed_area_detection">Вы можете непрерывно переводить фиксированные области, например, субтитры фильмов.</string>

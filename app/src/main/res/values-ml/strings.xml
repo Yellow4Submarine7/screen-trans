@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">അതി വേഗത്തിൽ വിവർത്തനം ചെയ്യുന്നു. എല്ലാ സമയത്തും സൗജന്യവും പരിധിയില്ലാത്തതുമായ സേവനം.</string>
     <string name="premium_view_description_sentence_detection">നിങ്ങളുടെ വിരൽ ഉപയോഗിച്ച് വരികൾ വിവർത്തനം ചെയ്യുക.</string>
     <string name="premium_view_description_paragraph_detection">പാരഗ്രാഫുകൾ സ്വയം തിരിച്ചറിയപ്പെടും.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">നിങ്ങൾക്ക് വേണ്ടിയ ഭാഗം തിരഞ്ഞടുക്കാം.</string>
     <string name="premium_view_description_word_detection">വാക്ക് തിരിച്ചുള്ള വിവർത്തനം എപ്പോഴും സൗജന്യവും പരിധിയില്ലാത്തതുമാണ്.</string>
     <string name="premium_view_description_fixed_area_detection">സിനിമ സബ്‌ടൈറ്റിലുകൾ പോലുള്ള സ്ഥിരമായ പ്രദേശങ്ങൾ നിങ്ങൾക്ക് തുടർച്ചയായി വിവർത്തനം ചെയ്യാൻ കഴിയും.</string>

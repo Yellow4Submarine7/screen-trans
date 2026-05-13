@@ -110,6 +110,7 @@
     <string name="premium_view_description_google">Ең жылдам аударма. Шексіз және әрқашан тегін.</string>
     <string name="premium_view_description_sentence_detection">Сызықтарды саусақпен түртіп аударыңыз.</string>
     <string name="premium_view_description_paragraph_detection">Параграфтар автоматты түрде танылады.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Қалаған аймақты өзіңіз таңдаңыз.</string>
     <string name="premium_view_description_word_detection">Сөзбе-сөз аударма әрқашан тегін және шектеусіз.</string>
     <string name="premium_view_description_fixed_area_detection">Сіз фильм субтитрлері сияқты тіркелген аймақтарды үздіксіз аудара аласыз.</string>

@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Tafsiri ya haraka zaidi. Bila kikomo, bila malipo milele.</string>
     <string name="premium_view_description_sentence_detection">Tumia kidole chako kutafsiri mistari.</string>
     <string name="premium_view_description_paragraph_detection">Aya hutambuliwa kiotomatiki.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Unaweza pia kuchagua eneo unalotaka.</string>
     <string name="premium_view_description_word_detection">Tafsiri ya neno kwa neno ni bure na haina kikomo kila wakati.</string>
     <string name="premium_view_description_fixed_area_detection">Unaweza kutafsiri maeneo yaliyowekwa, kama vile manukuu ya filamu, kwa kuendelea.</string>

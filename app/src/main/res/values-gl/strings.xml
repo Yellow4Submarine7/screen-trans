@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Ofrecemos la traducción más rápida. Ilimitado, gratis indefinidamente.</string>
     <string name="premium_view_description_sentence_detection">Usa tus dedos para traducir líneas.</string>
     <string name="premium_view_description_paragraph_detection">Las unidades de párrafo se reconocen automáticamente.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">También puedes especificar el rango que deseas.</string>
     <string name="premium_view_description_word_detection">La traducción palabra por palabra siempre es gratuita e ilimitada.</string>
     <string name="premium_view_description_fixed_area_detection">Podes traducir continuamente áreas fixas, como as subtitulacións das películas.</string>

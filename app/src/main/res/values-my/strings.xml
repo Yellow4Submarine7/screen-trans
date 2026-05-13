@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">အမြန်ဆုံးဘာသာပြန်မှု။ အကန့်အသတ်မရှိ၊ အမြဲအခမဲ့။</string>
     <string name="premium_view_description_sentence_detection">လိုင်းများကိုလက်ဗွေအတိုင်းဘာသာပြန်နိုင်သည်။</string>
     <string name="premium_view_description_paragraph_detection">စာပိုဒ်များကိုအလိုအလျောက်သိနိုင်သည်။</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">သင့်လိုအပ်သောအပိုင်းကိုရွေးနိုင်သည်။</string>
     <string name="premium_view_description_word_detection">စာလုံးအလိုက်ဘာသာပြန်ခြင်းသည် အမြဲအခမဲ့ဖြစ်သည်။</string>
     <string name="premium_view_description_fixed_area_detection">ရုပ်ရှင်စာတန်းထိုးများကဲ့သို့သော တည်မြဲသောနေရာများကို သင်အမြဲတမ်းဘာသာပြန်နိုင်ပါသည်။</string>

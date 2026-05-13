@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Найхутчэйшы пераклад. Бясплатна і без абмежаванняў назаўжды.</string>
     <string name="premium_view_description_sentence_detection">Карыстайцеся пальцам для перакладу радкоў.</string>
     <string name="premium_view_description_paragraph_detection">Абзацы вызначаюцца аўтаматычна.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Вы таксама можаце выбраць жаданую вобласць.</string>
     <string name="premium_view_description_word_detection">Пераклад па словах заўсёды бясплатны і неабмежаваны.</string>
     <string name="premium_view_description_fixed_area_detection">Вы можаце бесперапынна перакладаць фіксаваныя вобласці, напрыклад, субцітры фільмаў.</string>

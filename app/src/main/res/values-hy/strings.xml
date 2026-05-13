@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Ամենաարագ թարգմանությունը։ Անվճար և անվերջ՝ միշտ։</string>
     <string name="premium_view_description_sentence_detection">Օգտագործեք ձեր մատը՝ տողերը թարգմանելու համար։</string>
     <string name="premium_view_description_paragraph_detection">Պարբերությունները հայտնաբերվում են ավտոմատ կերպով։</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Դուք կարող եք նաև նշել ձեր ուզած հատվածը։</string>
     <string name="premium_view_description_word_detection">Բառ առ բառ թարգմանությունը միշտ անվճար և անսահմանափակ է։</string>
     <string name="premium_view_description_fixed_area_detection">Դուք կարող եք շարունակաբար թարգմանել ֆիքսված տարածքները, օրինակ՝ ֆիլմերի ենթագրերը։</string>

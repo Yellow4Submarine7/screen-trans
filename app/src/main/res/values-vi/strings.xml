@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">Dịch nhanh nhất. Không giới hạn, miễn phí mãi mãi.</string>
   <string name="premium_view_description_sentence_detection">Dùng tay kéo để dịch từng dòng.</string>
   <string name="premium_view_description_paragraph_detection">Tự động phát hiện đoạn văn.</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">Bạn cũng có thể chọn vùng muốn dịch.</string>
   <string name="premium_view_description_word_detection">Dịch từng từ luôn miễn phí và không giới hạn.</string>
   <string name="premium_view_description_fixed_area_detection">Bạn có thể dịch liên tục các khu vực cố định, như phụ đề phim.</string>

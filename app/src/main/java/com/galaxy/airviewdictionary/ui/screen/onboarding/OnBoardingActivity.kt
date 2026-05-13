@@ -103,6 +103,7 @@ class OnBoardingActivity : ComponentActivity() {
         val pages: List<@Composable () -> Unit> = listOf(
             { OnBoardingPage(TextDetectMode.WORD) },
             { OnBoardingPage(TextDetectMode.SENTENCE) },
+            { OnBoardingPage(TextDetectMode.SENSE_GROUP) },
             { OnBoardingPage(TextDetectMode.PARAGRAPH) },
             { OnBoardingPage(TextDetectMode.SELECT) },
             { OnBoardingPage(TextDetectMode.FIXED_AREA) },

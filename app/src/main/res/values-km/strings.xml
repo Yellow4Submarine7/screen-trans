@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">ការបកប្រែឆាប់បំផុត។ ឥតគិតថ្លៃ និងមិនមានដែនកំណត់។</string>
     <string name="premium_view_description_sentence_detection">បកប្រែលើបន្ទាត់ដោយប្រើម្រាមដៃ។</string>
     <string name="premium_view_description_paragraph_detection">កថាខណ្ឌត្រូវបានស្វ័យប្រវត្តិក្នុងការទទួលស្គាល់។</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">អ្នកអាចជ្រើសរើសតំបន់ដែលចង់បកប្រែបានផងដែរ។</string>
     <string name="premium_view_description_word_detection">ការបកប្រែពាក្យតែងតែឥតគិតថ្លៃ និងមិនមានដែនកំណត់។</string>
     <string name="premium_view_description_fixed_area_detection">អ្នកអាចបកប្រែតំបន់ថេរដូចជាចំណងជើងរបស់ភាពយន្តបានជាប់ជានិច្ច។</string>

@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">تیز ترین ترجمہ۔ ہمیشہ کے لیے مفت اور لامحدود۔</string>
     <string name="premium_view_description_sentence_detection">لکیریں ترجمہ کرنے کے لیے اپنی انگلی استعمال کریں۔</string>
     <string name="premium_view_description_paragraph_detection">پیراگراف خود بخود شناخت کیے جاتے ہیں۔</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">آپ مخصوص علاقہ بھی منتخب کر سکتے ہیں۔</string>
     <string name="premium_view_description_word_detection">لفظ بہ لفظ ترجمہ ہمیشہ مفت اور لامحدود ہے۔</string>
     <string name="premium_view_description_fixed_area_detection">آپ مقررہ علاقوں کا مسلسل ترجمہ کر سکتے ہیں، جیسے فلموں کے سب ٹائٹلز۔</string>

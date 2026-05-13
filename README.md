@@ -10,18 +10,18 @@
 </p>
 
 <p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.galaxy.airviewdictionary">
-    <img src="https://img.shields.io/badge/Google%20Play-1M%2B%20Downloads-34A853?style=for-the-badge&logo=google-play&logoColor=white" alt="Google Play"/>
+  <a href="https://github.com/Yellow4Submarine7/screen-trans/releases">
+    <img src="https://img.shields.io/github/v/release/Yellow4Submarine7/screen-trans?style=for-the-badge&logo=github" alt="GitHub Release"/>
   </a>&nbsp;
-  <img src="https://img.shields.io/badge/Rating-3.9%20%E2%AD%90-FBBC04?style=for-the-badge" alt="Rating"/>&nbsp;
-  <img src="https://img.shields.io/badge/146%2B%20Languages-4285F4?style=for-the-badge&logo=google-translate&logoColor=white" alt="Languages"/>
+  <img src="https://img.shields.io/badge/min%20SDK-23-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Min SDK 23"/>&nbsp;
+  <img src="https://img.shields.io/badge/Kotlin-2.x-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"/>
 </p>
 
-<p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.galaxy.airviewdictionary">
-    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="220" alt="Get it on Google Play"/>
-  </a>
-</p>
+---
+
+## About this fork
+
+This is a personal republished copy of [`AidanPark/android-screen-translator`](https://github.com/AidanPark/android-screen-translator), independently maintained as `Yellow4Submarine7/screen-trans`. It is **not** distributed via Google Play — release builds are side-loadable debug-signed APKs published under [Releases](https://github.com/Yellow4Submarine7/screen-trans/releases). A future major version is planned as a complete rewrite in a different language/stack; until then this Kotlin/Compose codebase is kept buildable and patched for new-device quirks (foldables, current Android behavior).
 
 ---
 
@@ -71,6 +71,8 @@ Screen Translate floats on top of whatever you're doing. Just drag the pointer t
   </tr>
 </table>
 
+A fifth **Fixed-Area** mode pins translation to a sub-region of the screen and keeps re-translating it as content changes — useful for games or video with subtitles in a stable location.
+
 ---
 
 ## Works Everywhere
@@ -89,38 +91,45 @@ Screen Translate floats on top of whatever you're doing. Just drag the pointer t
 
 ---
 
-## Pick Your Translation Engine
+## Features
 
-<p align="center">
-  <img src=".images/screenshots/04.png" width="250" alt="Four translation engines"/>
-</p>
+**Capture & OCR**
+- Live screen capture via `MediaProjection` with optimized frame streaming
+- On-device OCR for **Latin, Chinese, Japanese, Korean, and Devanagari** scripts via Google ML Kit
+- Five detection modes: Word, Sentence, Paragraph, Selection box, Fixed-Area
+- Custom text grouping that clusters detected lines into words, sentences, or paragraphs from position, spacing, and font size
+- Right-to-left and vertical-writing language support (Arabic, Hebrew, Japanese vertical, etc.)
+- Automatic source-language detection via ML Kit Language ID
 
-Not all translation engines are created equal. Screen Translate lets you switch between **four engines** to find the best one for your language pair:
+**Translation engines**
+- Google Translate (web/JS endpoint plus on-device ML Kit translate models)
+- DeepL
+- Microsoft Azure Translator
+- Papago (Naver)
+- Engine choice is per-language, with each engine's supported pairs determined at runtime
 
-<table>
-  <tr>
-    <td align="center" width="25%">
-      <img src=".images/xvgnxa19.png" width="130" alt="Google Translate"/><br><br>
-      <strong>Google Translate</strong><br>
-      <sub>The all-rounder. Fast, free,<br>and covers 146+ languages.</sub>
-    </td>
-    <td align="center" width="25%">
-      <img src=".images/mx4jheti.png" width="130" alt="DeepL"/><br><br>
-      <strong>DeepL</strong><br>
-      <sub>Natural, human-sounding<br>translations. Best for European languages.</sub>
-    </td>
-    <td align="center" width="25%">
-      <img src=".images/Microsoft-Azure-Logo.webp" width="130" alt="Microsoft Azure"/><br><br>
-      <strong>Azure Translator</strong><br>
-      <sub>Microsoft's engine. Reliable<br>and accurate across languages.</sub>
-    </td>
-    <td align="center" width="25%">
-      <img src="app/src/main/res/drawable/logo_engine_papago.png" width="65" alt="Papago"/><br><br>
-      <strong>Papago</strong><br>
-      <sub>Naver's neural MT. Excels at<br>Korean, Japanese, and Chinese.</sub>
-    </td>
-  </tr>
-</table>
+**AI assist**
+- Optional ChatGPT-based OCR error correction (`data/remote/ai/CorrectionRepository.kt`) — sends the recognized text to ChatGPT to clean up misread characters before translation
+- Bring-your-own OpenAI API key
+
+**UX**
+- Text-to-Speech with selectable voices and rate
+- Floating overlay built in Jetpack Compose, rendered through `SYSTEM_ALERT_WINDOW`
+- Reactive screen-metrics handling for foldables and orientation changes
+- Onboarding flow + permission requesters for notifications and screen-capture grants
+
+---
+
+## Translation Engines
+
+| Engine | Provider | Notes |
+|---|---|---|
+| Google Translate | Google | Default, broad language coverage; also uses on-device ML Kit translate models |
+| DeepL | DeepL SE | Higher-quality output for European language pairs (requires your own API key) |
+| Azure Translator | Microsoft | Wide language list including rare codes (Klingon, Yucatec Maya, etc.) |
+| Papago | Naver | Strong on Korean / Japanese / Chinese pairs |
+
+A stub `YandexKit` exists in source but is not wired into the production engine list.
 
 ---
 
@@ -130,80 +139,97 @@ Not all translation engines are created equal. Screen Translate lets you switch 
   <img src=".images/screenshots/01.png" width="250" alt="AI text correction"/>
 </p>
 
-OCR isn't perfect — sometimes it misreads characters. Screen Translate uses **ChatGPT** to clean up OCR errors before translating, so you get accurate results even from messy text, handwriting, or stylized fonts.
+OCR isn't perfect — characters get misread, especially with small fonts, handwriting, or stylized text. When enabled, Screen Translate sends the recognized text to **ChatGPT** to repair OCR mistakes before handing it off to a translation engine, which materially improves results on messy input.
 
----
-
-## 130+ Languages
-
-<p align="center">
-  <img src=".images/screenshots/03.png" width="250" alt="130+ languages"/>
-</p>
-
-From Arabic to Zulu, from English to Japanese — translate between **130+ languages** with automatic source language detection. No need to manually set what language you're reading.
-
----
-
-## Why I Built This
-
-I live between languages every day, and existing solutions all required too many steps. I wanted something that just **works** — point at text, get the meaning. No context switching, no clipboard juggling.
-
-Over time, it grew into a full-featured translation tool with multiple engines, AI correction, and smart text recognition. And now **over 1 million people** use it.
+> **Note:** In this fork's debug build, AI Correction requires a user-supplied OpenAI API key — enter it via **Settings → API Key** in the app. Without a key, ML Kit's on-device Google Translate still works; everything else (including the upcoming Sense Group mode) needs a key. The original backend-distributed key mechanism is intentionally inert here and will return when the project is publicly distributed.
 
 ---
 
 ## Under the Hood
 
-> *For the curious developers who want to peek inside.*
+> *For curious developers who want to peek inside.*
 
 ### How the magic happens
 
-1. **Screen Capture** — Android's `MediaProjection` API continuously captures what's on your screen
-2. **Text Recognition** — Google ML Kit runs **on-device OCR** to find and extract text from the captured frames
-3. **Smart Grouping** — A custom algorithm clusters detected text into words, lines, sentences, or paragraphs based on position, spacing, and font size
-4. **Translation** — The recognized text is sent to your chosen translation engine via REST APIs
-5. **Overlay Rendering** — Results are displayed in a floating Compose UI overlay on top of your current app
-
-All of this happens in **under a second**.
+1. **Screen Capture** — `MediaProjection` continuously captures the current display into an `ImageReader` surface
+2. **Text Recognition** — Google ML Kit runs **on-device OCR** on captured frames (5 script-specific recognizers)
+3. **Smart Grouping** — A custom algorithm clusters detected text into words, lines, sentences, or paragraphs based on geometry, spacing, font size, and writing direction
+4. **Translation** — Recognized text is sent to the chosen engine (Google web/ML Kit, DeepL, Azure, or Papago) via Retrofit
+5. **Overlay Rendering** — Results are rendered in a floating Compose overlay attached as a `TYPE_APPLICATION_OVERLAY` window
 
 ### Tech highlights
 
 | | |
 |---|---|
 | **Kotlin + Jetpack Compose** | Modern Android UI with reactive state management |
-| **Clean Architecture + MVVM** | Separation of concerns with ViewModels and Repositories |
-| **Hilt** | Dependency injection for clean, testable code |
-| **ML Kit** | On-device OCR for English, Chinese, Japanese, Korean, and Devanagari |
-| **Multi-engine translation** | Google, DeepL, Azure, and Papago with smart routing |
-| **Coroutines + StateFlow** | Smooth async operations without callback hell |
-| **Firebase** | Analytics, Crashlytics, Remote Config, and Realtime Database |
-| **Play Integrity API** | Security verification to prevent abuse |
-| **MediaProjection** | Real-time screen capture with optimized frame streaming |
+| **MVVM + Repository pattern** | ViewModels and repositories for separation of concerns |
+| **Hilt** | Dependency injection across the app |
+| **ML Kit** | On-device OCR for Latin, Chinese, Japanese, Korean, and Devanagari + Language ID + on-device translate models |
+| **Multi-engine translation** | Google, DeepL, Azure, Papago via Retrofit + kotlinx-serialization |
+| **Coroutines + StateFlow** | Async pipelines from capture → OCR → translate → overlay |
+| **Firebase** | Analytics, Crashlytics, Remote Config, Realtime Database, App Check |
+| **Play Integrity API** | Standard-request device integrity verification (`data/local/secure/SecureRepository.kt`) |
+| **MediaProjection** | Real-time screen capture with `ImageReader`-backed frame pipeline |
+| **androidx.window** | Foldable-aware screen-metrics tracking via `currentWindowMetrics` |
 
 ### Project structure
 
 ```
 app/src/main/java/com/galaxy/airviewdictionary/
-├── core/                  # OverlayService — the heart of the app
+├── App.kt
+├── Const.kt
+├── core/                  # OverlayService — foreground service hosting the overlay
 ├── data/
+│   ├── AVDRepository.kt
 │   ├── local/
-│   │   ├── vision/        # OCR & text grouping algorithms
-│   │   ├── capture/       # Screen capture via MediaProjection
+│   │   ├── capture/       # MediaProjection-based screen capture
+│   │   ├── preference/    # DataStore-backed user settings
+│   │   ├── screen/        # ScreenInfoHolder, foldable/orientation metrics
+│   │   ├── secure/        # Play Integrity verdicts
 │   │   ├── tts/           # Text-to-Speech
-│   │   └── preference/    # User settings
+│   │   └── vision/        # ML Kit OCR + custom text grouping
 │   └── remote/
-│       ├── translation/   # Google, DeepL, Azure, Papago APIs
-│       ├── ai/            # ChatGPT text correction
-│       └── billing/       # Google Play Billing
-├── ui/
-│   ├── screen/
-│   │   ├── overlay/       # Floating translation UI
-│   │   ├── main/          # Settings screens
-│   │   └── onboarding/    # First-time setup
-│   └── common/            # Shared components
-├── di/                    # Hilt dependency injection
-└── extensions/            # Kotlin extension functions
+│       ├── ai/            # ChatGPT OCR correction
+│       │   └── chatgpt/
+│       ├── billing/       # Google Play Billing
+│       ├── firebase/      # Analytics, Crashlytics, Remote Config, RTDB
+│       ├── geolocale/     # Region detection
+│       └── translation/
+│           ├── azure/
+│           ├── deepl/
+│           ├── goolge/    # (sic) Google web + ML Kit translate
+│           ├── papago/
+│           └── yandex/    # stub, not active
+├── di/                    # Hilt modules
+├── extensions/            # Kotlin extension helpers
+└── ui/
+    ├── common/
+    ├── screen/
+    │   ├── intro/         # Splash
+    │   ├── main/          # Settings
+    │   ├── onboarding/
+    │   ├── overlay/       # Floating translation UI (the heart of the UX)
+    │   ├── permissions/
+    │   ├── reply/
+    │   └── test/          # Internal dev screens
+    └── theme/
 ```
+
+---
+
+## Recent fixes
+
+### v2.4.5 (May 2026)
+
+Two unrelated bug fixes bundled together.
+
+- **Stale ViewModel cache in `OverlayService`.** After the service's `viewModelStore` was cleared, the manual `lateinit var` cache still pointed at the dead ViewModel — translations would silently stop working. Cache now invalidates with the store.
+- **Foldable screen dimensions.** `ScreenInfoHolder.updateScreenInfoInService` previously only swapped width/height by orientation instead of re-reading actual display bounds, so after folding the bubble cursor landed off-screen on Z Fold-style devices. It now reads `WindowManager.currentWindowMetrics.bounds` on each configuration change.
+- **Known behavior:** the post-fold MediaProjection re-authorization dialog is *intentional*, per Android's documented design. `VirtualDisplay.resize() + setSurface()` only covers same-display configuration changes; physical-display switches invalidate the existing projection.
+
+### v2.4.3
+
+- **Keep MediaProjection alive across screen lock.** An inactivity `Runnable` in `CaptureRepository` was nulling the projection token whenever the screen turned off, forcing users to re-grant screen recording on every wake. Removed that path; the projection now survives lock/unlock cycles for as long as the foreground service is running.
 
 ---
 
@@ -211,58 +237,49 @@ app/src/main/java/com/galaxy/airviewdictionary/
 
 ### What you need
 
-- **Android Studio** (Ladybug or later)
+- **Android Studio** Ladybug or later
 - **JDK 17**
-- **Android SDK 35**
+- **Android SDK 35** (compile/target), min SDK 23
 
 ### Steps
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/AidanPark/src-screen-translator.git
-   cd src-screen-translator
+   git clone https://github.com/Yellow4Submarine7/screen-trans.git
+   cd screen-trans
    ```
 
-2. **Set up signing** — Edit `gradle.properties`:
+2. **Set up signing** — edit `gradle.properties`:
    ```properties
    KEYSTORE_FILE=your-keystore.jks
    KEY_ALIAS=your-key-alias
    KEY_PASSWORD=your-key-password
    ```
 
-3. **Add Firebase config** — Place your own `google-services.json` in the `app/` directory
+3. **Add Firebase config** — drop your own `google-services.json` in `app/`.
 
-4. **Build & Run**
+4. **Build & install**
    ```bash
    ./gradlew assembleDebug
    ```
 
-> **Note:** You'll need your own API keys for translation services (Google, DeepL, Azure, Papago) and a Firebase project to run the full app. The OCR and on-device features work without any API keys.
+> Debug builds use Google's official test AdMob App ID, so no AdMob account is required to run the app locally. Live translation engines other than ML Kit's on-device Google models require your own API keys (DeepL, Azure, Papago, OpenAI). OCR and on-device translation work without any keys.
 
 ---
 
 ## Permissions Explained
 
 | Permission | What it does |
-|-----------|-------------|
-| **Display over other apps** | Shows the floating translation overlay |
-| **Screen capture** | Reads text from your screen using OCR |
-| **Internet** | Connects to translation APIs |
-| **Vibration** | Gives haptic feedback when text is detected |
-| **Notifications** | Required for the foreground service indicator |
+|---|---|
+| `SYSTEM_ALERT_WINDOW` | Shows the floating translation overlay on top of other apps |
+| `FOREGROUND_SERVICE` + `FOREGROUND_SERVICE_MEDIA_PROJECTION` | Hosts the long-running capture/overlay service |
+| `MediaProjection` (runtime grant) | Captures the screen frame-by-frame for OCR |
+| `INTERNET` + `ACCESS_NETWORK_STATE` | Calls remote translation and AI APIs |
+| `POST_NOTIFICATIONS` | Required for the foreground-service notification on Android 13+ |
+| `VIBRATE` | Haptic feedback when text is detected under the cursor |
 
 ---
 
 ## License
 
-This project is provided for **educational and reference purposes**. See [LICENSE](LICENSE) for details.
-
----
-
-<p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.galaxy.airviewdictionary">
-    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="220" alt="Get it on Google Play"/>
-  </a>
-  <br><br>
-  <sub>Made with caffeine and curiosity.</sub>
-</p>
+Provided for **educational and reference purposes**. See [LICENSE](LICENSE) for details.

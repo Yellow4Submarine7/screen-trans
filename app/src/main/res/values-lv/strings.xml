@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">Ātrākais tulkojums. Neierobežoti un bez maksas uz visiem laikiem.</string>
   <string name="premium_view_description_sentence_detection">Izmantojiet pirkstus, lai tulkotu rindas.</string>
   <string name="premium_view_description_paragraph_detection">Automātiska rindkopu atpazīšana.</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">Varat arī izvēlēties konkrētu apgabalu.</string>
   <string name="premium_view_description_word_detection">Vārdu pa vārdam tulkojums vienmēr ir bez maksas un bez ierobežojumiem.</string>
   <string name="premium_view_description_fixed_area_detection">Jūs varat nepārtraukti tulkot fiksētas zonas, piemēram, filmu subtitrus.</string>

@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Kõige kiirem tõlge. Igavesti tasuta ja piiranguteta.</string>
     <string name="premium_view_description_sentence_detection">Tõlgi ridu sõrmega osutades.</string>
     <string name="premium_view_description_paragraph_detection">Lõigud tuvastatakse automaatselt.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Saate ka soovitud ala käsitsi valida.</string>
     <string name="premium_view_description_word_detection">Sõna-sõnalt tõlkimine on alati tasuta ja piiranguteta.</string>
     <string name="premium_view_description_fixed_area_detection">Saad pidevalt tõlkida fikseeritud alasid, näiteks filmide subtiitreid.</string>

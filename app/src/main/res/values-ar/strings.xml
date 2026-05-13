@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">أسرع ترجمة. مجانية وغير محدودة إلى الأبد.</string>
   <string name="premium_view_description_sentence_detection">استخدم إصبعك لترجمة السطور.</string>
   <string name="premium_view_description_paragraph_detection">يتم التعرف على الفقرات تلقائيًا.</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">يمكنك أيضًا تحديد المنطقة التي تريد ترجمتها.</string>
   <string name="premium_view_description_fixed_area_detection">يمكنك ترجمة المناطق الثابتة مثل ترجمات الأفلام باستمرار.</string>
   <string name="premium_view_description_word_detection">الترجمة كلمة بكلمة دائمًا مجانية وغير محدودة.</string>

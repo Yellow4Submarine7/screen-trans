@@ -27,6 +27,8 @@ object SecureStoreKey {
     const val API_KEY_VERSION_YANDEX = "api_key_version_yandex"
     const val API_KEY_CHATGPT = "api_key_chatgpt"
     const val API_KEY_VERSION_CHATGPT = "api_key_version_chatgpt"
+    const val API_BASE_URL_CHATGPT = "api_base_url_chatgpt"
+    const val API_MODEL_CHATGPT = "api_model_chatgpt"
 
     const val TRIAL_START_TIME = "trial_start_time"
     const val TRIAL_TIME_LIMIT_MINUTE = "trial_time_limit_minute"

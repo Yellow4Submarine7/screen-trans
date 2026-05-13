@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">सबैभन्दा छिटो अनुवाद। अनन्त रूपमा निःशुल्क।</string>
     <string name="premium_view_description_sentence_detection">आङुलीले लाइनहरू अनुवाद गर्नुहोस्।</string>
     <string name="premium_view_description_paragraph_detection">अनुच्छेदहरू स्वचालित रूपमा चिनिन्छन्।</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">तपाईं चाहेको दायरा पनि चयन गर्न सक्नुहुन्छ।</string>
     <string name="premium_view_description_word_detection">शब्दअनुसार अनुवाद सधैँ निःशुल्क र असीमित।</string>
     <string name="premium_view_description_fixed_area_detection">तपाईंले चलचित्रका सबटाइटलहरू जस्ता स्थिर क्षेत्रहरू निरन्तर अनुवाद गर्न सक्नुहुन्छ।</string>

@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Эң тез котормо менен камсыздайбыз. Чектөөсүз, түбөлүк акысыз.</string>
     <string name="premium_view_description_sentence_detection">Саптарды манжаңыз менен которуңуз.</string>
     <string name="premium_view_description_paragraph_detection">Абзац бирдиктери автоматтык түрдө таанылат.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Каалаган диапазонду көрсөтсөңүз болот.</string>
     <string name="premium_view_description_word_detection">Сөз-сөз менен котормо ар дайым акысыз жана чектөөсүз.</string>
     <string name="premium_view_description_fixed_area_detection">Сиз тасманын субтитрлери сыяктуу туруктуу аймактарды тынымсыз которо аласыз.</string>

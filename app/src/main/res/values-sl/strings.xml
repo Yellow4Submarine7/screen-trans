@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Najhitrejši prevod. Vedno brezplačno in neomejeno.</string>
     <string name="premium_view_description_sentence_detection">Uporabite prst za prevod vrstic.</string>
     <string name="premium_view_description_paragraph_detection">Odstavki se zaznajo samodejno.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Lahko izberete območje za prevod.</string>
     <string name="premium_view_description_word_detection">Prevajanje po besedah je vedno brezplačno in neomejeno.</string>
     <string name="premium_view_description_fixed_area_detection">Nenehno lahko prevajate fiksna območja, kot so podnapisi v filmih.</string>

@@ -88,6 +88,22 @@ object ApiKeyInfo {
         SecureStore.set(context, SecureStoreKey.API_KEY_VERSION_CHATGPT, apiKeyVersionChatgpt.toString())
     }
 
+    fun getApiBaseUrlChatgpt(context: Context): String? {
+        return SecureStore.get(context, SecureStoreKey.API_BASE_URL_CHATGPT)?.get()
+    }
+
+    fun setApiBaseUrlChatgpt(context: Context, baseUrl: String) {
+        SecureStore.set(context, SecureStoreKey.API_BASE_URL_CHATGPT, baseUrl)
+    }
+
+    fun getApiModelChatgpt(context: Context): String? {
+        return SecureStore.get(context, SecureStoreKey.API_MODEL_CHATGPT)?.get()
+    }
+
+    fun setApiModelChatgpt(context: Context, model: String) {
+        SecureStore.set(context, SecureStoreKey.API_MODEL_CHATGPT, model)
+    }
+
 
     fun apiKeyAvailable(context: Context): Boolean {
         return getApiKeyAzure(context) != null && getApiKeyAzure(context)!!.isNotEmpty()
@@ -100,6 +116,10 @@ object ApiKeyInfo {
                 && getApiKeyVersionYandex(context) != null
                 && getApiKeyChatgpt(context) != null && getApiKeyChatgpt(context)!!.isNotEmpty()
                 && getApiKeyVersionChatgpt(context) != null
+    }
+
+    fun chatgptKeyAvailable(context: Context): Boolean {
+        return getApiKeyChatgpt(context).let { !it.isNullOrEmpty() }
     }
 
 }

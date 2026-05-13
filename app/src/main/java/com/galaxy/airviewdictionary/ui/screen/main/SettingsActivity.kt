@@ -118,6 +118,7 @@ import com.galaxy.airviewdictionary.BuildConfig
 import com.galaxy.airviewdictionary.R
 import com.galaxy.airviewdictionary.data.local.capture.CaptureRepository
 import com.galaxy.airviewdictionary.data.local.screen.ScreenInfoHolder
+import com.galaxy.airviewdictionary.data.local.secure.ApiKeyInfo
 import com.galaxy.airviewdictionary.data.local.secure.TrialLimitInfo
 import com.galaxy.airviewdictionary.data.local.vision.TextDetectMode
 import com.galaxy.airviewdictionary.data.remote.ai.CorrectionKitType
@@ -745,6 +746,12 @@ class SettingsActivity : AVDActivity() {
             initialValue = CorrectionKitType.CHAT_GPT
         )
 
+        // OpenAI API key (internal testing UI)
+        var showOpenAiApiKeyDialog by remember { mutableStateOf(false) }
+        var openAiKeyIsSet by remember {
+            mutableStateOf(!ApiKeyInfo.getApiKeyChatgpt(context).isNullOrEmpty())
+        }
+
         // Automatic translation playback
         val automaticTranslationPlayback by viewModel.preferenceRepository.automaticTranslationPlaybackFlow.collectAsStateWithLifecycle(
             lifecycle = lifecycleOwner.lifecycle,
@@ -1350,7 +1357,7 @@ class SettingsActivity : AVDActivity() {
                             )
 
                             MenuItem(
-                                menuItemPosition = MenuItemPosition.Single,
+                                menuItemPosition = MenuItemPosition.Top,
                                 onClick = {
                                     viewModel.updateUseCorrectionKit(!useCorrectionKit)
                                 }
@@ -1385,6 +1392,20 @@ class SettingsActivity : AVDActivity() {
                                     )
                                 }
                             }
+
+                            MenuTextItem(
+                                menuItemPosition = MenuItemPosition.Bottom,
+                                text = getString(R.string.settings_menu_openai_api_key),
+                                paddingValues = paddingValues,
+                                subText = if (openAiKeyIsSet) {
+                                    getString(R.string.settings_menu_openai_api_key_set)
+                                } else {
+                                    getString(R.string.settings_menu_openai_api_key_not_set)
+                                },
+                                onClick = {
+                                    showOpenAiApiKeyDialog = true
+                                }
+                            )
 
                             MenuCategory(
                                 painter = painterResource(id = R.drawable.ic_translation_window),
@@ -1740,6 +1761,30 @@ class SettingsActivity : AVDActivity() {
                     }
                 }
             }
+        }
+
+        if (showOpenAiApiKeyDialog) {
+            OpenAiApiKeyDialog(
+                onDismissRequest = { showOpenAiApiKeyDialog = false },
+                onSaved = {
+                    openAiKeyIsSet = true
+                    showOpenAiApiKeyDialog = false
+                    android.widget.Toast.makeText(
+                        context,
+                        context.getString(R.string.settings_menu_openai_api_key_saved),
+                        android.widget.Toast.LENGTH_SHORT
+                    ).show()
+                },
+                onCleared = {
+                    openAiKeyIsSet = false
+                    showOpenAiApiKeyDialog = false
+                    android.widget.Toast.makeText(
+                        context,
+                        context.getString(R.string.settings_menu_openai_api_key_cleared),
+                        android.widget.Toast.LENGTH_SHORT
+                    ).show()
+                },
+            )
         }
     }
 

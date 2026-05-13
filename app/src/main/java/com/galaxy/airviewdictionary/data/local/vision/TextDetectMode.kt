@@ -20,6 +20,12 @@ enum class TextDetectMode(
         descriptionResourceId = R.string.premium_view_description_sentence_detection,
         videoResourceId = R.raw.sentence_resized_rounded,
     ),
+    SENSE_GROUP(
+        text = "Sense group detection",
+        iconResourceId = R.drawable.ic_detect_mode_sense_group,
+        descriptionResourceId = R.string.premium_view_description_sense_group_detection,
+        videoResourceId = R.raw.sentence_resized_rounded, // placeholder — reuse sentence video for now
+    ),
     PARAGRAPH(
         text = "Paragraph detection",
         iconResourceId = R.drawable.ic_detect_mode_paragraph,

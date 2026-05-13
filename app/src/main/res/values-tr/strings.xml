@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">En hızlı çeviri. Sınırsız ve sonsuza dek ücretsiz.</string>
   <string name="premium_view_description_sentence_detection">Çizgileri çevirmek için parmağınızı kullanın.</string>
   <string name="premium_view_description_paragraph_detection">Paragraf birimleri otomatik olarak algılanır.</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">İstediğiniz alanı manuel olarak seçebilirsiniz.</string>
   <string name="premium_view_description_word_detection">Kelime bazlı çeviri her zaman ücretsiz ve sınırsızdır.</string>
   <string name="premium_view_description_fixed_area_detection">Film altyazıları gibi sabit alanları sürekli olarak çevirebilirsiniz.</string>

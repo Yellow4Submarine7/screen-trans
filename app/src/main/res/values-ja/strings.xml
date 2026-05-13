@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">最速の翻訳を提供。無制限で永久無料。</string>
   <string name="premium_view_description_sentence_detection">指先で行単位の翻訳が可能です。</string>
   <string name="premium_view_description_paragraph_detection">段落単位で自動認識されます。</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">翻訳範囲を自分で指定できます。</string>
   <string name="premium_view_description_word_detection">単語単位の翻訳は常に無料で無制限です。</string>
   <string name="premium_view_description_fixed_area_detection">映画の字幕など、固定された領域を継続的に翻訳できます。</string>

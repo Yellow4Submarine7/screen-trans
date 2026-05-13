@@ -110,6 +110,7 @@
     <string name="premium_view_description_google">Pinakamabilis na pagsasalin. Libre magpakailanman.</string>
     <string name="premium_view_description_sentence_detection">Gamitin ang iyong daliri upang isalin ang mga linya.</string>
     <string name="premium_view_description_paragraph_detection">Awtomatikong nakikilala ang mga talata.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Maaari mo ring tukuyin ang nais na saklaw.</string>
     <string name="premium_view_description_word_detection">Ang salitang-salitang pagsasalin ay laging libre at walang limitasyon.</string>
     <string name="premium_view_description_fixed_area_detection">Maaari kang tuloy-tuloy na magsalin ng mga nakapirming lugar, tulad ng mga subtitle ng pelikula.</string>

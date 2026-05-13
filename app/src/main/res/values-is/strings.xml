@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Hraðasta þýðingin. Ókeypis og ótakmarkað að eilífu.</string>
     <string name="premium_view_description_sentence_detection">Notaðu puttann til að þýða línur.</string>
     <string name="premium_view_description_paragraph_detection">Málsgreinar eru greindar sjálfkrafa.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Þú getur líka valið svæðið sem þú vilt.</string>
     <string name="premium_view_description_word_detection">Orð fyrir orð þýðing er alltaf ókeypis og ótakmörkuð.</string>
     <string name="premium_view_description_fixed_area_detection">Þú getur þýtt stöðug svæði eins og texta í kvikmyndum.</string>

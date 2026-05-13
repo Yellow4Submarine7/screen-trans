@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">Najszybsze tłumaczenia. Bez ograniczeń. Na zawsze darmowe.</string>
   <string name="premium_view_description_sentence_detection">Użyj palca, aby przetłumaczyć linie tekstu.</string>
   <string name="premium_view_description_paragraph_detection">Akapity są wykrywane automatycznie.</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">Możesz też ręcznie zaznaczyć wybrany zakres.</string>
   <string name="premium_view_description_word_detection">Tłumaczenie słowo po słowie jest zawsze darmowe i bez ograniczeń.</string>
   <string name="premium_view_description_fixed_area_detection">Możesz nieprzerwanie tłumaczyć stałe obszary, takie jak napisy filmowe.</string>

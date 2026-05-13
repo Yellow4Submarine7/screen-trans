@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Προσφέρουμε την ταχύτερη μετάφραση. Απεριόριστη, δωρεάν για πάντα.</string>
     <string name="premium_view_description_sentence_detection">Χρησιμοποιήστε τα δάχτυλά σας για να μεταφράσετε γραμμές.</string>
     <string name="premium_view_description_paragraph_detection">Οι παράγραφοι αναγνωρίζονται αυτόματα.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Μπορείτε επίσης να καθορίσετε το εύρος που θέλετε.</string>
     <string name="premium_view_description_word_detection">Η μετάφραση λέξη προς λέξη είναι πάντα δωρεάν και απεριόριστη.</string>
     <string name="premium_view_description_fixed_area_detection">Μπορείτε να μεταφράζετε συνεχώς σταθερές περιοχές, όπως οι υπότιτλοι ταινιών.</string>

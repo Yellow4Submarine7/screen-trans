@@ -182,6 +182,7 @@ class TargetHandleView private constructor() : OverlayView() {
                 && pointerPositionedVisionText != previousVisionText.value
                 && (textDetectMode == TextDetectMode.WORD
                         || textDetectMode == TextDetectMode.SENTENCE
+                        || textDetectMode == TextDetectMode.SENSE_GROUP
                         || textDetectMode == TextDetectMode.PARAGRAPH)
             ) {
                 context.vibrate()

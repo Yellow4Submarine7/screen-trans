@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Ihumusho elisheshayo. Mahhala unomphela.</string>
     <string name="premium_view_description_sentence_detection">Sebenzisa umunwe wakho ukuhumusha imigqa.</string>
     <string name="premium_view_description_paragraph_detection">Amaparagrafu ayahlonzwa ngokuzenzakalelayo.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Ungakhetha indawo ofuna ukuyihumusha.</string>
     <string name="premium_view_description_word_detection">Ukuhumusha igama ngalinye kumahhala futhi akunamkhawulo.</string>
     <string name="premium_view_description_fixed_area_detection">Ungaguqulela njalo izindawo ezimile, njengezihloko zezifilimu.</string>

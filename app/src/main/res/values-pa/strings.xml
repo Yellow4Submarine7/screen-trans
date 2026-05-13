@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">ਸਭ ਤੋਂ ਤੇਜ਼ ਅਨੁਵਾਦ। ਅਣਸੀਮਤ, ਸਦਾ ਲਈ ਮੁਫ਼ਤ।</string>
     <string name="premium_view_description_sentence_detection">ਲਾਈਨਾਂ ਨੂੰ ਅਨੁਵਾਦ ਕਰਨ ਲਈ ਆਪਣੀ ਅੰਗੁਠੀ ਵਰਤੋ।</string>
     <string name="premium_view_description_paragraph_detection">ਪੈਰਾ ਆਪਣੇ ਆਪ ਪਛਾਣੇ ਜਾਂਦੇ ਹਨ।</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">ਤੁਸੀਂ ਚਾਹੁੰਦੇ ਹਿੱਸੇ ਦੀ ਚੋਣ ਵੀ ਕਰ ਸਕਦੇ ਹੋ।</string>
     <string name="premium_view_description_word_detection">ਸ਼ਬਦ-ਦਰ-ਸ਼ਬਦ ਅਨੁਵਾਦ ਹਮੇਸ਼ਾ ਮੁਫ਼ਤ ਅਤੇ ਅਣਸੀਮਤ ਹੈ।</string>
     <string name="premium_view_description_fixed_area_detection">ਤੁਸੀਂ ਫਿਲਮ ਸਬਟਾਈਟਲਾਂ ਵਾਂਗ ਸਥਿਰ ਖੇਤਰਾਂ ਦਾ ਲਗਾਤਾਰ ਅਨੁਵਾਦ ਕਰ ਸਕਦੇ ਹੋ।</string>

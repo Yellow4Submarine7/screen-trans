@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Die vinnigste vertaling. Gratis en onbeperk vir altyd.</string>
     <string name="premium_view_description_sentence_detection">Gebruik jou vinger om lyne te vertaal.</string>
     <string name="premium_view_description_paragraph_detection">Paragrawe word outomaties herken.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Jy kan ook die area spesifiseer wat jy wil hê.</string>
     <string name="premium_view_description_word_detection">Woord-vir-woord vertaling is altyd gratis en onbeperk.</string>
     <string name="premium_view_description_fixed_area_detection">Jy kan deurlopend vaste areas vertaal, soos fliekondertitels.</string>

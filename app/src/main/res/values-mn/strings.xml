@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Хамгийн хурдан орчуулга. Үргэлж үнэгүй, хязгааргүй.</string>
     <string name="premium_view_description_sentence_detection">Хуруугаараа шугамыг зааж орчуул.</string>
     <string name="premium_view_description_paragraph_detection">Догол мөрийг автоматаар танина.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Хүссэн хэсгээ зааж орчуулж болно.</string>
     <string name="premium_view_description_word_detection">Үг бүрийн орчуулга үргэлж үнэгүй, хязгааргүй.</string>
     <string name="premium_view_description_fixed_area_detection">Та киноны хадмал орчуулга гэх мэт тогтмол бүсүүдийг тасралтгүй орчуулах боломжтой.</string>

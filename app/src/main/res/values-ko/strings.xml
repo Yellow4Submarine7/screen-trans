@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">가장 빠른 번역. 무제한, 영원히 무료입니다.</string>
   <string name="premium_view_description_sentence_detection">손가락으로 줄 단위 번역이 가능합니다.</string>
   <string name="premium_view_description_paragraph_detection">문단 단위를 자동으로 인식합니다.</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">원하는 영역을 직접 지정할 수도 있습니다.</string>
   <string name="premium_view_description_word_detection">단어 단위 번역은 언제나 무료이며 무제한입니다.</string>
   <string name="premium_view_description_fixed_area_detection">영화 자막과 같은 고정된 영역을 지속적으로 번역할 수 있습니다.</string>

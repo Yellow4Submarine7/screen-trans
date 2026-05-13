@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">La traducció més ràpida. Gratuïta i il·limitada per sempre.</string>
     <string name="premium_view_description_sentence_detection">Tradueix línies amb el teu dit.</string>
     <string name="premium_view_description_paragraph_detection">Els paràgrafs es reconeixen automàticament.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">També pots seleccionar l’àrea que vulguis.</string>
     <string name="premium_view_description_word_detection">La traducció per paraules és sempre gratuïta i il·limitada.</string>
     <string name="premium_view_description_fixed_area_detection">Pots traduir contínuament àrees fixes, com els subtítols de pel·lícules.</string>

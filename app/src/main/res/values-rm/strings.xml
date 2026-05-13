@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">La pli svelta translaziun. Illimitada e gratuita per adina.</string>
     <string name="premium_view_description_sentence_detection">Utilisai il det per translatar lingias.</string>
     <string name="premium_view_description_paragraph_detection">Paragraphs vegnan renconuschids automaticamain.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Pudais era tscherner la zona da translatar.</string>
     <string name="premium_view_description_word_detection">Translaziun pled per pled è adina gratuita ed illimitada.</string>
     <string name="premium_view_description_fixed_area_detection">Pudais translatar cuntinuaivlamain zonas fixas, sco per exempel sutitels da films.</string>

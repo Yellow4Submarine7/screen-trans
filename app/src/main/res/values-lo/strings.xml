@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">ແປໄວທີ່ສຸດ ຟຣີໄດ້ບໍ່ຈໍາກັດ ຕະຫຼອດໄປ</string>
   <string name="premium_view_description_sentence_detection">ໃຊ້ນິ້ວມືແປຂໍ້ຄວາມແບບແຖວ</string>
   <string name="premium_view_description_paragraph_detection">ຈັບຂໍ້ຄວາມແບບຍໍ່ໄດ້ອັດຕະໂນມັດ</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">ເຈົ້າສາມາດເລືອກຂອບເຂດໄດ້</string>
   <string name="premium_view_description_word_detection">ແປຄໍາຕໍ່ຄໍາແມ່ນຟຣີແລະບໍ່ຈໍາກັດ</string>
   <string name="premium_view_description_fixed_area_detection">ທ່ານສາມາດແປພື້ນທີ່ຄົງທີ່ໄດ້ຕະຫຼອດ, ເຊັ່ນ ຄຳບັນຍາຍໃນຮູບເງົາ.</string>

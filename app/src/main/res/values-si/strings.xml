@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">ඉතා වේගවත් පරිවර්තනය. සදාකාලිකව නොමිලේ.</string>
     <string name="premium_view_description_sentence_detection">බාරයන් පරිවර්තනය කිරීමට ඇඟිලි භාවිතා කරන්න.</string>
     <string name="premium_view_description_paragraph_detection">පෙළ කොටස් ස්වයංක්‍රීයව හඳුනාගනී.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">ඔබට අවශ්‍ය පරාසය තෝරා ගත හැක.</string>
     <string name="premium_view_description_word_detection">වචනයෙන් වචනයට පරිවර්තනය හැමවිටම නොමිලේ සහ සීමා රහිතය.</string>
     <string name="premium_view_description_fixed_area_detection">චිත්‍රපට උපසිරැසි වැනි ස්ථිර ප්‍රදේශ නිරතුරුවම පරිවර්තනය කළ හැකිය.</string>

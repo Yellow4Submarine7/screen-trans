@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">უზუსტესი თარგმანი. უსასრულო და უფასო.</string>
     <string name="premium_view_description_sentence_detection">თარგმნეთ ხაზები თითის მოძრაობით.</string>
     <string name="premium_view_description_paragraph_detection">პარაგრაფები ავტომატურად ამოიცნობა.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">ასევე შეგიძლიათ აირჩიოთ სასურველი არეალი.</string>
     <string name="premium_view_description_word_detection">სიტყვა-სიტყვით თარგმანი ყოველთვის უფასოა და შეუზღუდავი.</string>
     <string name="premium_view_description_fixed_area_detection">თქვენ შეგიძლიათ გააგრძელოთ ფიქსირებული უბნების თარგმნა, მაგალითად, ფილმის სუბტიტრები.</string>

@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">सर्वात वेगवान अनुवाद. कायम मोफत आणि अमर्यादित.</string>
     <string name="premium_view_description_sentence_detection">रेषांवर बोट ठेवून अनुवाद करा.</string>
     <string name="premium_view_description_paragraph_detection">परिच्छेद आपोआप ओळखले जातात.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">तुम्हाला हवा तो भाग निवडू शकता.</string>
     <string name="premium_view_description_word_detection">शब्दशः अनुवाद नेहमी मोफत आणि अमर्यादित.</string>
     <string name="premium_view_description_fixed_area_detection">तुम्ही चित्रपटांच्या सबटायटल्ससारख्या स्थिर भागांचे सतत भाषांतर करू शकता.</string>

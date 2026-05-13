@@ -926,6 +926,13 @@ fun TextDetectModeIconButton(
         if (targetState == TextDetectMode.SENTENCE) 1f else 0f
     }
 
+    val alphaSenseGroup by transition.animateFloat(
+        transitionSpec = { tween(durationMillis = animationDuration) },
+        label = "alphaSenseGroup"
+    ) { targetState ->
+        if (targetState == TextDetectMode.SENSE_GROUP) 1f else 0f
+    }
+
     val alphaParagraph by transition.animateFloat(
         transitionSpec = { tween(durationMillis = animationDuration) },
         label = "alphaParagraph"
@@ -966,7 +973,8 @@ fun TextDetectModeIconButton(
         onClick = {
             currentTextDetectMode.value = when (currentTextDetectMode.value) {
                 TextDetectMode.WORD -> TextDetectMode.SENTENCE
-                TextDetectMode.SENTENCE -> TextDetectMode.PARAGRAPH
+                TextDetectMode.SENTENCE -> TextDetectMode.SENSE_GROUP
+                TextDetectMode.SENSE_GROUP -> TextDetectMode.PARAGRAPH
                 TextDetectMode.PARAGRAPH -> TextDetectMode.SELECT
                 TextDetectMode.SELECT -> TextDetectMode.FIXED_AREA
                 TextDetectMode.FIXED_AREA -> TextDetectMode.WORD
@@ -1010,6 +1018,19 @@ fun TextDetectModeIconButton(
                 .graphicsLayer(
                     rotationZ = rotationZ.value,
                     alpha = alphaSentence
+                ),
+            tint = contentColor
+        )
+
+        // SENSE_GROUP 아이콘
+        Icon(
+            painter = painterResource(id = R.drawable.ic_detect_mode_sense_group),
+            contentDescription = "Detect mode: SENSE_GROUP",
+            modifier = Modifier
+                .size(24.dp)
+                .graphicsLayer(
+                    rotationZ = rotationZ.value,
+                    alpha = alphaSenseGroup
                 ),
             tint = contentColor
         )

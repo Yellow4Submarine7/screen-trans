@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">हम सबसे तेज़ अनुवाद प्रदान करते हैं। असीमित, हमेशा के लिए निःशुल्क।</string>
   <string name="premium_view_description_sentence_detection">पंक्तियों का अनुवाद करने के लिए अपनी उंगली का उपयोग करें।</string>
   <string name="premium_view_description_paragraph_detection">पैराग्राफ इकाइयों को स्वचालित रूप से पहचाना जाता है।</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">आप उस सीमा को भी निर्दिष्ट कर सकते हैं जिसे आप चाहते हैं।</string>
   <string name="premium_view_description_word_detection">शब्द-दर-शब्द अनुवाद हमेशा निःशुल्क और असीमित है।</string>
   <string name="premium_view_description_fixed_area_detection">आप फ़िल्मों के सबटाइटल जैसी स्थिर क्षेत्रों का लगातार अनुवाद कर सकते हैं।</string>

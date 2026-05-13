@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Vi tilbyder den hurtigste oversættelse. Ubegrænset, gratis for evigt.</string>
     <string name="premium_view_description_sentence_detection">Brug fingerspidserne til at oversætte linjer.</string>
     <string name="premium_view_description_paragraph_detection">Afsnit genkendes automatisk.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Du kan også vælge det ønskede område.</string>
     <string name="premium_view_description_word_detection">Ord-for-ord-oversættelse er altid gratis og ubegrænset.</string>
     <string name="premium_view_description_fixed_area_detection">Du kan løbende oversætte faste områder, såsom filmundertekster.</string>

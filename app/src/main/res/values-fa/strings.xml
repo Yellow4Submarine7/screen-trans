@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">سریع‌ترین ترجمه را ارائه می‌دهد. رایگان و نامحدود برای همیشه.</string>
     <string name="premium_view_description_sentence_detection">با انگشت خود خطوط را برای ترجمه انتخاب کنید.</string>
     <string name="premium_view_description_paragraph_detection">واحدهای پاراگراف به‌صورت خودکار شناسایی می‌شوند.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">می‌توانید محدوده دلخواه را نیز انتخاب کنید.</string>
     <string name="premium_view_description_word_detection">ترجمه کلمه‌به‌کلمه همیشه رایگان و نامحدود است.</string>
     <string name="premium_view_description_fixed_area_detection">می‌توانید بخش‌های ثابت مانند زیرنویس فیلم را به‌صورت مداوم ترجمه کنید.</string>

@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Najrýchlejší preklad. Navždy zdarma a bez obmedzení.</string>
     <string name="premium_view_description_sentence_detection">Na preklad riadkov použite prst.</string>
     <string name="premium_view_description_paragraph_detection">Odseky sa automaticky rozpoznávajú.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Môžete tiež vybrať konkrétnu oblasť na preklad.</string>
     <string name="premium_view_description_word_detection">Preklad slovo po slove je vždy zdarma a bez obmedzenia.</string>
     <string name="premium_view_description_fixed_area_detection">Môžete nepretržite prekladať pevné oblasti, ako sú napríklad filmové titulky.</string>

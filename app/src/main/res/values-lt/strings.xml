@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">Greitas vertimas. Neribotai, visam laikui nemokamai.</string>
     <string name="premium_view_description_sentence_detection">Naudokite pirštą eilutėms versti.</string>
     <string name="premium_view_description_paragraph_detection">Pastraipos aptinkamos automatiškai.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Galite pasirinkti norimą sritį rankiniu būdu.</string>
     <string name="premium_view_description_word_detection">Vertimas žodis po žodžio visada nemokamas ir neribotas.</string>
     <string name="premium_view_description_fixed_area_detection">Galite nuolat versti fiksuotas sritis, tokias kaip filmų subtitrai.</string>

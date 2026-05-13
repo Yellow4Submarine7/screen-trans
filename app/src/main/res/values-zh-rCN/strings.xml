@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">最快的翻译，永久免费，无限制。</string>
   <string name="premium_view_description_sentence_detection">用手指滑动翻译整行文字。</string>
   <string name="premium_view_description_paragraph_detection">自动识别段落单位。</string>
+  <string name="premium_view_description_sense_group_detection">将句子拆分为语义单元（意群），逐段翻译。指向任意单词即可查看其所在意群的含义。</string>
   <string name="premium_view_description_select_detection">也可以自行选择需要翻译的区域。</string>
   <string name="premium_view_description_word_detection">逐词翻译永远免费，无限制。</string>
   <string name="premium_view_description_fixed_area_detection">您可以持续翻译固定区域，如电影字幕。</string>

@@ -40,11 +40,15 @@ import com.galaxy.airviewdictionary.data.local.vision.TextDetectMode
 import com.galaxy.airviewdictionary.data.local.vision.VisionRepository
 import com.galaxy.airviewdictionary.data.local.vision.model.Line
 import com.galaxy.airviewdictionary.data.local.vision.model.Paragraph
+import com.galaxy.airviewdictionary.data.local.vision.model.SenseGroupVisionText
+import com.galaxy.airviewdictionary.data.remote.ai.chatgpt.SenseGroup
+import com.galaxy.airviewdictionary.data.local.vision.model.Sentence
 import com.galaxy.airviewdictionary.data.local.vision.model.VisionResponse
 import com.galaxy.airviewdictionary.data.local.vision.model.VisionText
 import com.galaxy.airviewdictionary.data.local.vision.model.Word
 import com.galaxy.airviewdictionary.data.remote.ai.CorrectionKitType
 import com.galaxy.airviewdictionary.data.remote.ai.CorrectionRepository
+import com.galaxy.airviewdictionary.extensions._unionWith
 import com.galaxy.airviewdictionary.data.remote.billing.BillingRepository
 import com.galaxy.airviewdictionary.data.remote.firebase.AnalyticsRepository
 import com.galaxy.airviewdictionary.data.remote.firebase.RemoteConfigRepository
@@ -82,6 +86,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import timber.log.Timber
@@ -564,6 +569,7 @@ class TargetHandleViewModel(
                         if (
                             textDetectMode == TextDetectMode.WORD
                             || textDetectMode == TextDetectMode.SENTENCE
+                            || textDetectMode == TextDetectMode.SENSE_GROUP
                             || textDetectMode == TextDetectMode.PARAGRAPH
                         ) {
                             requestCapture()
@@ -774,11 +780,19 @@ class TargetHandleViewModel(
 
     /**
      * [pointerStoppedPositionFlow] (포인터가 머무는 위치) 와 [visionResultFlow] 를 취합하여 해당 위치의 VisionText 를 발행한다.
+     *
+     * SENSE_GROUP 모드에서는 hit-test 내부에서 ChatGPT 호출(~1-2s)이 동기적으로 일어나므로
+     * combine 의 transform 을 [mapLatest] 로 감싸 새 emission 이 도착하면 이전 GPT 호출이
+     * 자동으로 cancel 되도록 한다. ACTION_UP → visionResultFlow=null 도 이 경로를 통해
+     * in-flight 요청을 거두어들인다.
      */
+    @OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
     val pointerPositionedVisionTextFlow: Flow<VisionText?> = combine(
         pointerStoppedPositionFlow.filterNotNull(),
         visionResultFlow
     ) { pointerStoppedPosition, visionResult ->
+        Pair(pointerStoppedPosition, visionResult)
+    }.mapLatest { (pointerStoppedPosition, visionResult) ->
         visionResult?.let {
             getPointerPositionedVisionText(
                 visionResult = visionResult,
@@ -788,7 +802,7 @@ class TargetHandleViewModel(
         }
     }.distinctUntilChanged()
 
-    private fun getPointerPositionedVisionText(
+    private suspend fun getPointerPositionedVisionText(
         visionResult: com.galaxy.airviewdictionary.data.local.vision.model.Transaction,
         pointerPosition: Point,
         textDetectMode: TextDetectMode,
@@ -834,6 +848,17 @@ class TargetHandleViewModel(
             }
         }
 
+        if (textDetectMode == TextDetectMode.SENSE_GROUP) {
+            val positionedSentence: Sentence? = positionedParagraph?.sentences?.find { sentence ->
+                sentence.boundingPolygon.contains(pointerPosition)
+            }
+            return resolveSenseGroupVisionText(
+                sentence = positionedSentence,
+                pointerPosition = pointerPosition,
+                sourceLanguageCode = visionResult.detectedLanguageCode,
+            )
+        }
+
         val positionedLine: Line? = positionedParagraph?.lines?.find { line ->
             val expandedRect = expandedRect(line.boundingBox)
             expandedRect.contains(pointerPosition.x, pointerPosition.y)
@@ -843,6 +868,112 @@ class TargetHandleViewModel(
             expandedRect.contains(pointerPosition.x, pointerPosition.y)
         }
         return positionedWord
+    }
+
+    /**
+     * SENSE_GROUP 모드 hit-test 의 본체.
+     *
+     * 새 설계: OCR 패스 시점에 미리 모든 의미군을 만들지 않고, 사용자가 단어를 가리킬 때
+     * 그 단어 + 문장을 ChatGPT 에 함께 보내서 "이 단어가 속한 의미군 하나"만 받아온다.
+     * 이전 설계(문장 전체를 미리 쪼개기)는 GPT 가 결국 "문장 = 단일 청크"로 응답하기 일쑤라
+     * 사실상 의미군 분리가 안 됐다.
+     *
+     * 흐름:
+     * 1. [sentence] null → null 반환 (포인터가 어떤 sentence 위에도 없음)
+     * 2. cursor 위치에서 Word 못 찾으면 → sentence 폴백 (SENTENCE 모드와 동일 동작)
+     * 3. per-word 캐시 hit → 즉시 [SenseGroupVisionText] 반환
+     * 4. cache miss → 동기적으로 GPT 호출(suspend), 성공 시 캐시 후 반환, 실패 시 sentence 폴백
+     *
+     * 이 함수는 [pointerPositionedVisionTextFlow] 의 mapLatest transform 안에서 호출되므로
+     * 새 emission 이 도착하면 자동으로 cancel 된다 (Retrofit 호출도 함께 cancel).
+     */
+    private suspend fun resolveSenseGroupVisionText(
+        sentence: Sentence?,
+        pointerPosition: Point,
+        sourceLanguageCode: String,
+    ): VisionText? {
+        if (sentence == null) return null
+
+        // Cursor 가 닿은 word 찾기 (line-level expanded rect, WORD 모드와 동일).
+        val positionedLine: Line? = sentence.lines.find { line ->
+            val expandedRect = expandedRect(line.boundingBox)
+            expandedRect.contains(pointerPosition.x, pointerPosition.y)
+        }
+        val positionedWord: Word = positionedLine?.words?.find { word ->
+            val expandedRect = expandedRect(word.boundingBox)
+            expandedRect.contains(pointerPosition.x, pointerPosition.y)
+        } ?: return sentence // 단어를 못 찾으면 sentence-level 폴백
+
+        val wordOffset = sentence.wordCharOffset(positionedWord) ?: return sentence
+
+        // 1) 캐시 확인 — 같은 OCR 패스에서 같은 단어를 다시 가리키면 GPT 호출 없이 즉시 반환.
+        val cached = sentence.senseGroupCache[wordOffset]
+        if (cached != null) {
+            Timber.tag(TAG).d("SENSE_GROUP cache hit word=[${positionedWord.representation}] chunk=[${cached.text}]")
+            return buildSenseGroupVisionText(sentence, positionedWord, cached)
+        }
+
+        // 2) GPT 호출 — 단어와 문장을 함께 보내고 "그 단어가 속한 의미군"만 받아온다.
+        val sentenceText = sentence.representation
+        val wordText = positionedWord.representation
+        val targetLanguageCode: String = preferenceRepository.targetLanguageCodeFlow.first()
+
+        val group: SenseGroup? = try {
+            correctionRepository.senseGroupAt(
+                word = wordText,
+                sentence = sentenceText,
+                sourceLanguageCode = sourceLanguageCode,
+                targetLanguageCode = targetLanguageCode,
+            )
+        } catch (ce: kotlinx.coroutines.CancellationException) {
+            throw ce // 새 pointer/visionResult emission 으로 인한 cancel 은 그대로 전파
+        } catch (e: Exception) {
+            Timber.tag(TAG).w(e, "SENSE_GROUP senseGroupAt failed; falling back to sentence")
+            null
+        }
+
+        if (group == null) {
+            return sentence // 실패 시 sentence 폴백
+        }
+
+        sentence.senseGroupCache[wordOffset] = group
+        return buildSenseGroupVisionText(sentence, positionedWord, group)
+    }
+
+    /**
+     * 식별된 [SenseGroup] 을 화면 표시용 [SenseGroupVisionText] 로 wrap.
+     * boundingBox 는 청크 범위와 겹치는 모든 Word 의 bbox 합집합으로 계산 — 하이라이트 오버레이가
+     * 청크 영역에 정확히 맞춰지도록 한다.
+     */
+    private fun buildSenseGroupVisionText(
+        sentence: Sentence,
+        pointedWord: Word,
+        group: SenseGroup,
+    ): SenseGroupVisionText {
+        val wordsInChunk = mutableListOf<Word>()
+        for (line in sentence.lines) {
+            for (word in line.words) {
+                val wOff = sentence.wordCharOffset(word) ?: continue
+                val wEnd = wOff + word.representation.length
+                // ChatGPTKit 은 charRange 를 start..end 로 만들지만 end 는 exclusive (=length).
+                // overlap 조건은 wordStart < chunkEnd && wordEnd > chunkStart.
+                if (wOff < group.charRange.last && wEnd > group.charRange.first) {
+                    wordsInChunk.add(word)
+                }
+            }
+        }
+        val unionBoundingBox: Rect = if (wordsInChunk.isNotEmpty()) {
+            wordsInChunk.map { it.boundingBox }.reduce { acc, rect -> acc._unionWith(rect) }
+        } else {
+            pointedWord.boundingBox
+        }
+        return SenseGroupVisionText(
+            parentSentence = sentence,
+            senseGroup = group,
+            boundingBox = unionBoundingBox,
+            writingDirection = sentence.writingDirection,
+            fontHeight = sentence.fontHeight,
+        )
     }
 
     /**
@@ -878,6 +1009,37 @@ class TargetHandleViewModel(
                             translateStatusFlow.value = TranslateStatus.Requested
 
                             Timber.tag(TAG).d("sourceText ${pointerPositionedVisionText.representation}")
+
+                            // SENSE_GROUP fast path: chunk 의 pre-computed translation 이 있다면
+                            // 번역 엔진(및 correction) 호출을 모두 건너뛰고 곧바로 TranslationView 에
+                            // 결과를 전달한다. translation 이 빈 문자열이면 chunk 가 실패한 케이스
+                            // 이므로 아래의 normal flow 로 폴백한다.
+                            if (
+                                pointerPositionedVisionText is SenseGroupVisionText &&
+                                pointerPositionedVisionText.precomputedTranslation.isNotBlank()
+                            ) {
+                                val chunkText = pointerPositionedVisionText.representation
+                                val chunkTranslation = pointerPositionedVisionText.precomputedTranslation
+                                Timber.tag(TAG).d("SENSE_GROUP precomputed: [$chunkText] -> [$chunkTranslation]")
+                                translateStatusFlow.value = TranslateStatus.Translated
+                                val transaction = Transaction(
+                                    sourceLanguageCode = visionResultTransaction.detectedLanguageCode,
+                                    targetLanguageCode = targetLanguageCode,
+                                    sourceText = chunkText,
+                                    translationKitType = translationKitType,
+                                    detectedLanguageCode = visionResultTransaction.detectedLanguageCode,
+                                    correctionKitType = null,
+                                    correctedText = null,
+                                    resultText = chunkTranslation,
+                                )
+                                TranslationView.INSTANCE.cast(
+                                    applicationContext,
+                                    transaction,
+                                    pointerPositionedVisionText
+                                )
+                                pointerPositionedTranslationFlow.value = transaction
+                                return@let
+                            }
 
                             var correctedText: String? = null
                             val useCorrectionKit: Boolean = preferenceRepository.useCorrectionKitFlow.first()

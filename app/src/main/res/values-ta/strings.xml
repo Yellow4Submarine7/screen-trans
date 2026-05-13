@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">மிக விரைவான மொழிபெயர்ப்பு. முடிவில்லாமல் இலவசம்.</string>
     <string name="premium_view_description_sentence_detection">கோடுகளை விரலால் தேர்ந்தெடுத்து மொழிபெயர்க்கலாம்.</string>
     <string name="premium_view_description_paragraph_detection">பத்தி அளவுகள் தானாக அடையாளம் காணப்படும்.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">நீங்கள் விரும்பும் பகுதியை தேர்ந்தெடுக்கலாம்.</string>
     <string name="premium_view_description_word_detection">சொல்லுக்கு சொல்லாக மொழிபெயர்ப்பு எப்போதும் இலவசம் மற்றும் வரம்பில்லாது.</string>
     <string name="premium_view_description_fixed_area_detection">திரைப்பட வசன வரிகள் போன்ற நிலையான பகுதிகளை நீங்கள் தொடர்ச்சியாக மொழிபெயர்க்கலாம்.</string>

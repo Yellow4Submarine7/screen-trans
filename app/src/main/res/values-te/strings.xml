@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">అతి వేగంగా అనువదించబడుతుంది. ఎల్లప్పుడూ ఉచితం మరియు పరిమితిలేదు</string>
     <string name="premium_view_description_sentence_detection">మీ వేళ్లతో లైన్లు అనువదించండి</string>
     <string name="premium_view_description_paragraph_detection">పేరాల గుర్తింపు స్వయంచాలకంగా జరుగుతుంది</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">మీకు కావలసిన పరిధిని కూడా ఎంచుకోవచ్చు</string>
     <string name="premium_view_description_word_detection">పదం వారీగా అనువాదం ఎల్లప్పుడూ ఉచితం మరియు పరిమితిలేకుండా ఉంటుంది</string>
     <string name="premium_view_description_fixed_area_detection">సినిమా సబ్‌టైటిల్స్ వంటి ఫిక్స్ చేసిన ప్రాంతాలను మీరు నిరంతరంగా అనువదించవచ్చు.</string>

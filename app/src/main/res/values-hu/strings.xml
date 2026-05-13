@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">A leggyorsabb fordítás. Korlátlan, örökre ingyenes.</string>
     <string name="premium_view_description_sentence_detection">Fordítás soronként, ujjmozdulattal.</string>
     <string name="premium_view_description_paragraph_detection">A bekezdéseket automatikusan felismeri.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">Kijelölheted a kívánt területet is.</string>
     <string name="premium_view_description_word_detection">A szó szerinti fordítás mindig ingyenes és korlátlan.</string>
     <string name="premium_view_description_fixed_area_detection">Folyamatosan fordíthatsz rögzített területeket, például filmfeliratokat.</string>

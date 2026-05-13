@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">በፍጥነት የሚሰጠው ትርጉም። ለዘላለም ነጻ።</string>
     <string name="premium_view_description_sentence_detection">መስመሮችን ለመተርጎም ጣቶን ይጠቀሙ።</string>
     <string name="premium_view_description_paragraph_detection">አንቀፆች በራሳቸው ይታወቃሉ።</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">ምርጫ የሚፈልጉትን ክልል ይምረጡ።</string>
     <string name="premium_view_description_word_detection">ቃላትን በቃል ትርጉም ሁልጊዜ ነጻ እና ያለ ገደብ ነው።</string>
     <string name="premium_view_description_fixed_area_detection">እንደ ፊልም ንዑሶች ያሉ ቆይታ አካባቢዎችን ቀጥሏል መተርጎም ይችላሉ።</string>

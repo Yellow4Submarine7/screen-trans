@@ -109,6 +109,7 @@
     <string name="premium_view_description_google">અતિ ઝડપથી અનુવાદ કરે છે. અમર્યાદિત અને કાયમ માટે મફત.</string>
     <string name="premium_view_description_sentence_detection">લાઈનો અનુવાદ કરવા માટે ફિંગરટિપ્સનો ઉપયોગ કરો.</string>
     <string name="premium_view_description_paragraph_detection">પેરાગ્રાફ યુનિટ આપમેળે ઓળખાય છે.</string>
+    <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
     <string name="premium_view_description_select_detection">તમે પસંદગીઅનુસાર વિસ્તારો નિર્ધારિત કરી શકો છો.</string>
     <string name="premium_view_description_word_detection">શબ્દ પ્રમાણે અનુવાદ હંમેશા મફત અને અમર્યાદિત છે.</string>
     <string name="premium_view_description_fixed_area_detection">તમે મૂવીના ઉપશીર્ષકો જેવી નિશ્ચિત વિસ્તારોનું સતત અનુવાદ કરી શકો છો.</string>

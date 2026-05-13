@@ -448,6 +448,32 @@ fun PremiumView(
                         ) {
                             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q && mp4PlayerVisible.value) {
                                 MP4Player(
+                                    resourceId = TextDetectMode.SENSE_GROUP.videoResourceId,
+                                    modifier = Modifier.size(videoDimen)
+                                )
+                            }
+                        }
+                        Text(
+                            modifier = Modifier.weight(1.0f),
+                            text = stringResource(id = TextDetectMode.SENSE_GROUP.descriptionResourceId),
+                            textAlign = TextAlign.Center,
+                            color = contentColor,
+                            style = MaterialTheme.typography.bodyLarge.copy(fontSize = 16.sp)
+                        )
+                    }
+
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(videoBoxDimen),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Box(
+                            modifier = Modifier.weight(1.0f),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q && mp4PlayerVisible.value) {
+                                MP4Player(
                                     resourceId = TextDetectMode.PARAGRAPH.videoResourceId,
                                     modifier = Modifier.size(videoDimen)
                                 )

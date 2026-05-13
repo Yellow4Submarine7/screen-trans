@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">אנו מספקים את התרגום המהיר ביותר. חופשי, ללא הגבלה, לתמיד.</string>
   <string name="premium_view_description_sentence_detection">השתמש באצבעך כדי לתרגם שורות.</string>
   <string name="premium_view_description_paragraph_detection">יחידות פסקה מזוהות אוטומטית.</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">באפשרותך גם לבחור את הטווח הרצוי.</string>
   <string name="premium_view_description_word_detection">תרגום לפי מילה חופשי וללא הגבלה תמיד.</string>
   <string name="premium_view_description_fixed_area_detection">באפשרותך לתרגם ברציפות אזורים קבועים, כמו כתוביות של סרטים.</string>

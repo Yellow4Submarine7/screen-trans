@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">Die schnellste Übersetzung. Unbegrenzt, für immer kostenlos.</string>
   <string name="premium_view_description_sentence_detection">Verwenden Sie Ihre Fingerspitzen, um Zeilen zu übersetzen.</string>
   <string name="premium_view_description_paragraph_detection">Absätze werden automatisch erkannt.</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">Sie können auch den gewünschten Bereich auswählen.</string>
   <string name="premium_view_description_word_detection">Wort-für-Wort-Übersetzung ist immer kostenlos und unbegrenzt.</string>
   <string name="premium_view_description_fixed_area_detection">Du kannst feste Bereiche wie Filmuntertitel kontinuierlich übersetzen.</string>

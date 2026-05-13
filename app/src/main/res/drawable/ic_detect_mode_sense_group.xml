@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Three connected horizontal bars representing semantic chunks (sense groups). -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M3,5 H8 V9 H3 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M10,5 H17 V9 H10 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M19,5 H21 V9 H19 Z" />
+
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M3,15 H6 V19 H3 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M8,15 H14 V19 H8 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M16,15 H21 V19 H16 Z" />
+</vector>

@@ -109,6 +109,7 @@
   <string name="premium_view_description_google">Kami menyediakan terjemahan tercepat. Tak terbatas, gratis selamanya.</string>
   <string name="premium_view_description_sentence_detection">Gunakan jari Anda untuk menerjemahkan baris.</string>
   <string name="premium_view_description_paragraph_detection">Unit paragraf dikenali secara otomatis.</string>
+  <string name="premium_view_description_sense_group_detection">Splits a sentence into semantic chunks (sense groups) and translates each. Tap any word to see the meaning of the chunk it belongs to.</string>
   <string name="premium_view_description_select_detection">Anda juga dapat menentukan area yang ingin diterjemahkan.</string>
   <string name="premium_view_description_word_detection">Terjemahan kata per kata selalu gratis dan tanpa batas.</string>
   <string name="premium_view_description_fixed_area_detection">Anda dapat menerjemahkan area tetap secara terus-menerus, seperti subtitle film.</string>
